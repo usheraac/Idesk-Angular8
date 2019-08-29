@@ -1,0 +1,66 @@
+
+<div class="text-dark">
+  <h1> Liste des Incidents  </h1>
+  <button><a type="button" class="btn btn-success"  routerLink="/incident-form">
+    Ajouter
+  </a>
+  </button>
+  <button type="button" class="btn btn-success" (click)="onSaveList()">Enregistrer</button>
+
+  <button type="button" class="btn btn-success" (click)="onFetchList()">Récupérer</button>
+</div>
+
+<table class="table table-hover">
+  <thead>
+  <tr>
+
+    <th scope="col">Objet</th>
+    <th scope="col">Description</th>
+    <th scope="col">Service</th>
+    <th scope="col">Date</th>
+    <th scope="col">Date_target</th>
+    <th scope="col">Status</th>
+    <th scope="col">discussion</th>
+    <th scope="col">Employe</th>
+
+
+  </tr>
+  </thead>
+  <tbody  *ngFor="let incident of incidentsList; let  i = index ">
+  <!--{% for var in incident %}-->
+
+  <!--{% if (var.getId() % 2)==0 %}-->
+
+  <tr class="table-primary">
+    <th scope="row">{{incident.Objet}}</th>
+    <td>{{incident.Description}}</td>
+    <td>{{incident.Service}}</td>
+    <td>{{incident.Date}}</td>
+    <td>{{incident.Date_target}}</td>
+    <td>{{incident.Status}}</td>
+    <td>{{incident.Discussion}}</td>
+    <td>{{incident.Employe}}</td>
+    <td>   <button  type="button" class="btn btn-success"
+                    (click) = "onModifyIncidents(i)">
+      MAJ</button>
+    </td>
+    <td> <a> <button type="button" class="btn btn-danger"
+                     (click) = "onDeleteIncidents(i)">
+      Clôturer</button>
+    </a></td>
+
+
+    <!--<td><a href="http://localhost:8000/editE/{{ var.getId()}}"> <button type="button" class="btn btn-success">Editer</button></a></td>
+    <td><a href="http://localhost:8000/deleteE/{{ var.getId()}}"> <button type="button" class="btn btn-danger">Delete</button></a></td>
+-->
+
+
+
+  </tr>
+
+
+  </tbody>
+  <!--<td><a href="http://localhost:8000/inscription" > <button type="button" class="btn btn-primary">Nouvel Employé</button></a></td>-->
+</table>
+
+

@@ -1,0 +1,68 @@
+<div>
+  <div>Encoder un Nouvel Incident</div>
+
+  <form [formGroup]= "incidentForm" (ngSubmit)="onSubmitForm()" >
+
+
+
+
+    <div class="form-group">
+      <label for="Objet">
+        Objet
+      </label>
+      <input type="text" class="form-control" id="Objet" placeholder="saisir l' Objet" formControlName="Objet">
+    </div>
+
+    <div class="form-group">
+      <label for="Description">
+        Description
+      </label>
+      <input type="text" class="form-control" id="Description" placeholder="saisir une Description" formControlName="Description">
+    </div>
+
+    <div class="form-group">
+      <label for="Service">
+        Service
+      </label>
+      <input type="text" class="form-control" id="Service" placeholder="Quel Departement?" formControlName="Service">
+    </div>
+
+    <div class="form-group">
+      <label for="Date">
+        Date
+      </label>
+      <input type="text" class="form-control" id="Date" placeholder="date" formControlName="Date">
+    </div>
+
+    <div class="form-group">
+      <label for="Date_target">
+        Date_target
+      </label>
+      <input type="text" class="form-control" id="Date_target" placeholder="date limite pour la resolution" formControlName="Date_target">
+    </div>
+
+    <div class="form-group">
+      <label for="Status">
+        Status
+      </label>
+      <input type="text" class="form-control" id="Status" placeholder="quel est son statut" formControlName="Status">
+    </div>
+
+    <div class="form-group">
+      <label for="Discussion">
+        Discussion
+      </label>
+      <input type="text" class="form-control" id="Discussion" placeholder="commentaire" formControlName="Discussion">
+    </div>
+    <div class="form-group">
+      <label for="Employe">
+        Employe
+      </label>
+      <input type="text" class="form-control" id="Employe" placeholder="Employé responsable" formControlName="Employe">
+    </div>
+
+    <button class="btn btn-primary" type="submit" [disabled]="incidentForm.invalid"> Enregistrer</button>
+
+  </form>
+</div>
+

@@ -1,0 +1,64 @@
+
+<div class="text-dark">
+  <h1> Liste des employés  </h1>
+  <button><a type="button" class="btn btn-success"  routerLink="/employe-form">
+    Ajouter
+  </a>
+  </button>
+  <button type="button" class="btn btn-success" (click)="onSaveList()">Enregistrer</button>
+
+  <button type="button" class="btn btn-success" (click)="onFetchList()">Récupérer</button>
+</div>
+
+<table class="table table-hover">
+  <thead>
+  <tr>
+    <th scope="col">Identifiant</th>
+    <th scope="col">Nom</th>
+    <th scope="col">Prenom</th>
+    <th scope="col">Age</th>
+    <th scope="col">Departement</th>
+    <th scope="col">Fonction</th>
+    <th scope="col">Telephone</th>
+    <th scope="col">Email</th>
+
+
+  </tr>
+  </thead>
+  <tbody  *ngFor="let employe of employesList; let  i = index ">
+  <!--{% for var in employe %}-->
+
+  <!--{% if (var.getId() % 2)==0 %}-->
+
+  <tr class="table-primary">
+    <th scope="row">{{employe.Identifiant}}</th>
+    <td>{{employe.Nom}}</td>
+    <td>{{employe.Prenom}}</td>
+    <td>{{employe.Age}}</td>
+    <td>{{employe.Departement}}</td>
+    <td>{{employe.Fonction}}</td>
+    <td>{{employe.Telephone}}</td>
+    <td>{{employe.Email}}</td>
+    <td>   <button  type="button" class="btn btn-success"
+                    (click) = "onModifyEmployes(i)">
+      Modifier</button>
+    </td>
+    <td> <a> <button type="button" class="btn btn-danger"
+                     (click) = "onDeleteEmployes(i)">
+      Supprimer</button>
+    </a></td>
+
+
+    <!--<td><a href="http://localhost:8000/editE/{{ var.getId()}}"> <button type="button" class="btn btn-success">Editer</button></a></td>
+    <td><a href="http://localhost:8000/deleteE/{{ var.getId()}}"> <button type="button" class="btn btn-danger">Delete</button></a></td>
+-->
+
+
+
+  </tr>
+
+
+  </tbody>
+  <!--<td><a href="http://localhost:8000/inscription" > <button type="button" class="btn btn-primary">Nouvel Employé</button></a></td>-->
+</table>
+
